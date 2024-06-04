@@ -1,0 +1,45 @@
+---
+import "./score.css";
+import Flecha from "../flecha.astro";
+---
+
+<div id="pag-score">
+  <div class="container">
+    <Flecha id="9" clase="duration score"/>
+
+    <!-- <img  id="borde-derecho" src="../public/images/noche-icono-arbu.png"  > -->
+    <img  id="borde-derecarriba" src="../public/images/borde.png"  >
+    <img  id="borde-izqrotate" src="../public/images/borde.png"  >
+    <div class="ternary-system">
+      <div class="sun primary"></div>
+      <div class="sun secondary"></div>
+      <div class="sun ternary"></div>
+    </div>
+    <div class="sand">
+      <div class="pendulums">
+        <div class="pendulum">
+          <div class="bar"></div>
+          <div class="motion">
+            <div class="string"></div>
+            <div class="weight"></div>
+          </div>
+        </div>
+        <div class="pendulum shadow">
+          <div class="bar"></div>
+          <div class="motion">
+            <div class="string"></div>
+            <div class="weight"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pyramid"></div>
+ 
+    <div class="postion-puntos">
+      <h2 id="puntos">¡Hora de explorar tus puntos del año!</h2>
+    </div>
+  </div>
+  <script src="./score.js"></script>
+  <script src="../transition.js"></script>
+</div>

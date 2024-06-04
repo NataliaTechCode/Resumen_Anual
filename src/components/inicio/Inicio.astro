@@ -1,0 +1,56 @@
+---
+import "./inicio.css";
+import Flecha from "../flecha.astro";
+
+interface Props {
+  nombre: String;
+}
+
+const { nombre } = Astro.props;
+
+/*Obtner solo el primero nombre */
+let nombre_usuario = nombre.split(" ");
+let primerNombre = nombre_usuario[0];
+// console.log(primerNombre)
+---
+
+<html>
+  <div transition-style="out:wipe:cinematic">
+    <div id="pag-inicio">
+      <body>
+        <div class="container">
+          <img src="../public/images/Montañas.png" id="mountains" />
+          <img src="../public/images/Arboles.png" id="trees" />
+          <h1 class="duration intro">RESUMEN 2024</h1>
+          <h1 class="duration saludo" id="saludo">
+            {`Hola ${primerNombre}!!!!`}
+          </h1>
+          <h1 class="duration introduccion" id="introduccion">
+            ES HORA DE CELEBRAR TUS LOGROS VAMOS A DESCUBRIRLO
+          </h1>
+
+          <Flecha clase="duration introduccion" id="1" />
+
+          <section>
+            <img
+              class="duration intro"
+              src="../public/images/LogoLabTecno.png"
+              id="labTecno"
+            />
+            <img
+              class="duration intro"
+              src="../public/images/Icono-arbu.png"
+              id="icono"
+            />
+            <p class="duration intro">Arbu</p>
+            <a href="#" class="duration intro" id="click">Click</a>
+          </section>
+          <script src="./inicio.js"></script>
+          <script src="../transition.js"></script>
+        </div>
+      </body>
+    </div>
+  </div>
+
+
+</html>

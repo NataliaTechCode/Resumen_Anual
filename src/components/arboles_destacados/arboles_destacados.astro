@@ -1,0 +1,22 @@
+---
+import "./arboles_destacados.css";
+
+interface Props {
+  name: string;
+  image: string;
+  tipo: string;
+}
+
+const { name, image, tipo } = Astro.props;
+
+---
+
+
+<div class="conteiner-3">
+  <h2 class="nombre-arbol">{`${name}`}</h2>
+  <h2 class="arbol-act">
+    {name ? `Arbol con mayor ${tipo}` : 'No se prestó atención a ningún árbol'}
+  </h2>
+</div>
+<img src={`${image}`} id="cuadro" />
+

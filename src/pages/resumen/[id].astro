@@ -1,0 +1,165 @@
+---
+/*Importacion de pag*/
+import "../../components/resumen.css";
+import Layout from "../../layouts/Layout.astro";
+import Inicio from "../../components/inicio/Inicio.astro";
+import Riegos from "../../components/riegos/riegos.astro";
+import Monitoreos from "../../components/monitoreos/monitoreos.astro";
+import Arboles from "../../components/arboles-plantados/arbol.astro";
+import CantArboles from "../../components/arboles-plantados/cant_arboles.astro";
+import ArbolRiegos from "../../components/arbol-riegos/arbol_riegos.astro";
+import ArbolMonitoreos from "../../components/arbol-monitoreos/arbol_monitoreos.astro";
+import ArbolCrecimiento from "../../components/arbol-crecimiento/arbol_crecimiento.astro";
+import Usuarios from "../../components/usuarios/usuarios.astro";
+import Score from "../../components/score/score.astro";
+import Scoremes from "../../components/score_mes/scoremes.astro";
+import Top from "../../components/top/top.astro";
+import Medalla from "../../components/medalla/medalla.astro";
+import Despedida from "../../components/despedida/despedida.astro";
+/*-----*/
+
+import Flecha from "../../components/flecha.astro";
+import LogoLayout from "../../layouts/LogoLayout.astro";
+import Share from "../../components/social_share/share.astro";
+
+/*Obtencion de datos */
+import {
+  arbolesAdoptados,
+  arbolesPlantados,
+} from "../../components/consultas/arbolesAdoptados";
+import {
+  obtenerRiegos,
+  obtenerMonitoreos,
+  maxRiegos,
+  maxMonitoreos,
+  maxcrecimiento,
+  obtenerdatosArbol,
+  obtenerUsuarios,
+  obtenerDetallesDeUsuarios,
+  arbolesPlantadoscant,
+} from "../../components/consultas/CantidadDatos";
+
+import {
+  calculartop,
+  obtenerPuntosTotal,
+  determinarMedalla,
+} from "../../components/consultas/score";
+
+/*Datos*/
+// import { usuarios } from "../../../public/data/usuario";
+import { loadUsuarios } from "../../services/loadUsuarios";
+
+const usuarios = await loadUsuarios();
+
+/*Obtencion de datos*/
+let year = 2022;
+
+const { id } = Astro.params;
+
+const usuario = usuarios.find((usuarios) => usuarios.id === id);
+// console.log(usuario)
+
+/*Obtencion de datos */
+const arbolesAdoptado = arbolesAdoptados(id);
+const arbolesPlantado = arbolesPlantados(arbolesAdoptado, id);
+
+const cantRiegos = obtenerRiegos(arbolesAdoptado, year, id);
+const cantMonitoreos = obtenerMonitoreos(arbolesAdoptado, year, id);
+const totalArboles = arbolesPlantadoscant(arbolesPlantado, year);
+
+/*Arbol con mayor riegos */
+const arbolriego = maxRiegos(arbolesAdoptado, year);
+const datosarbolriego = obtenerdatosArbol(arbolriego);
+// console.log(datosarbolriego[0].nombrearbol)
+
+/*Arbol con mayor monitoreos */
+const arbolmonitoreo = maxMonitoreos(arbolesAdoptado, year);
+const datosarbolmonitoreo = obtenerdatosArbol(arbolmonitoreo);
+
+// console.log(datosarbolmonitoreo[0].nombrearbol)
+
+/*Arbol con mayor crecimiento */
+
+const arbolcrecimiento = maxcrecimiento(arbolesAdoptado, year);
+const datosarbolcrecimiento = obtenerdatosArbol(arbolmonitoreo);
+// console.log(datosarbolcrecimiento[0].fotografia)
+
+/*Obtener usuario*/
+
+const usuariosQueadoptaron = obtenerUsuarios(arbolesAdoptado);
+const detallesDeUsuarios = obtenerDetallesDeUsuarios(
+  usuariosQueadoptaron,
+  usuarios,
+  id
+);
+
+/*Obtener Top Usuario */
+const topactual = calculartop(id);
+// console.log(topactual)
+
+/*Obtener medalla y punto */
+
+const puntos = obtenerPuntosTotal(id);
+const medalla = determinarMedalla(puntos);
+
+// const usuarioDatos = obtnerdatosid(id);
+// console.log("nombre" + usuarioDatos[0]);
+---
+
+<Layout title="Resumen Anual.">
+  <LogoLayout>
+    <main>
+      <Inicio nombre={usuario ? usuario.nombre : "¿Cómo estás hoy?"} />
+      <Riegos cantRiegos={cantRiegos} />
+      <Monitoreos cantMonitoreos={cantMonitoreos} />
+      <Arboles />
+      <CantArboles cantArboles={totalArboles} />
+
+      <ArbolRiegos
+        name={datosarbolriego[0].nombrearbol}
+        image={datosarbolriego[0].fotografia}
+      />
+      <ArbolMonitoreos
+        name={datosarbolmonitoreo[0].nombrearbol}
+        image={datosarbolmonitoreo[0].fotografia}
+      />
+      <ArbolCrecimiento
+        name={datosarbolcrecimiento[0].nombrearbol}
+        image={datosarbolcrecimiento[0].fotografia}
+        crecimiento={20}
+      />
+
+      <div id="pag-usuario">
+        <div class="container">
+          <Flecha id="8" clase="duration usuario-2" />
+          {
+            detallesDeUsuarios.map((user) => (
+              <Usuarios
+                nombreUsuario={user.nombre || "Nombre no disponible"}
+                imageProfile={
+                  user.imageProfile === "default"
+                    ? "../public/images/perfil.jpg"
+                    : user.imageProfile
+                }
+              />
+            ))
+          }
+          <script src="../../components/resumen.js"></script>
+          <script src="../../components/transition.js"></script>
+        </div>
+      </div>
+
+      <Score />
+      <Scoremes />
+      <Top top={topactual} />
+
+      <Medalla puntos={puntos} medalla={medalla} />
+      <Despedida
+        nombre={usuario ? usuario.nombre : ""}
+        imageProfile={usuario
+          ? usuario.imageProfile
+          : "https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_1280.png"}
+      />
+    </main>
+  </LogoLayout>
+</Layout>

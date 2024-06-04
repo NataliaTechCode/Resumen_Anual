@@ -1,0 +1,22 @@
+@keyframes wipe-out-down {
+  from {
+    clip-path: inset(0 0 0 0);
+  }
+  to {
+    clip-path: inset(100% 0 0 0);
+  }
+}
+
+[transition-style="out:wipe:down"] {
+  animation: 1s cubic-bezier(0.25, 1, 0.3, 1) wipe-out-down both;
+}
+
+.Arbolmonitoreo {
+  font-size: 8vw;
+  display: none;
+}
+
+#flecha-6{
+  position: absolute;
+  top: 50%;
+}

@@ -1,0 +1,38 @@
+---
+import "./arbol_crecimiento.css";
+import ArbolesDestacados from "../arboles_destacados/arboles_destacados.astro";
+import Flecha from "../flecha.astro";
+
+interface Props {
+  name: string;
+  image: string;
+  crecimiento: number;
+}
+
+const { name, image, crecimiento } = Astro.props;
+---
+
+<div id="pagArboles-crecimiento">
+  <div class="container">
+    <h1 class="duration crecimiento">
+      {name ? "Uno de tus árboles ha tenido un crecimiento extraordinario": 'No adoptaste árboles lo cual es esencial para su cuidado'}
+    </h1>
+
+    <img id="borde-izqabajo" src="../public/images/noche-icono-arbu.png" />
+    <img id="borde-derecho" src="../public/images/noche-icono-arbu.png" />
+
+    <div class="duration crecimiento-2">
+      <ArbolesDestacados
+        name={name ? name : ''}
+        image={image ? image : "../public/images/arbol_seco.jpg"}
+        tipo={name ? `crecimiento de ${crecimiento} centimetros`: ''}
+      />
+    </div>
+    <h1 class="duration crecimiento-3">
+      {name ? " Estos árboles fueron cuidados con gran esmero y atención": 'Adoptar árboles es clave para incrementar su presencia en todo el mundo.'}
+    </h1>
+    <Flecha id="7" clase="duration crecimiento-3" />
+  </div>
+  <script src="./arbol_crecimiento.js"></script>
+  <script src="../transition.js"></script>
+</div>

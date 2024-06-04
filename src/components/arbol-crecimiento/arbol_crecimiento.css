@@ -1,0 +1,52 @@
+/*Trancisiones*/
+
+@keyframes wipe-in-up {
+  from {
+    clip-path: inset(100% 0 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+[transition-style="in:wipe:up"] {
+  animation: 1s cubic-bezier(0.25, 1, 0.3, 1) wipe-in-up both;
+}
+
+@keyframes wipe-out-bottom-left {
+  from {
+    clip-path: polygon(50% -50%, 150% 50%, 50% 150%, -50% 50%);
+  }
+  to {
+    clip-path: polygon(-50% 50%, 50% 150%, 50% 150%, -50% 50%);
+  }
+}
+
+[transition-style="out:wipe:bottom-left"] {
+  animation: 1s cubic-bezier(0.25, 1, 0.3, 1) wipe-out-bottom-left both;
+}
+
+#pagArboles-crecimiento {
+  visibility: hidden;
+}
+
+.crecimiento{
+  font-size: 7vw;
+  z-index: 999;
+  width: 80%;
+  /* display: none; */
+}
+
+.crecimiento-2{
+  font-size: 8vw;
+  display: none;
+}
+
+
+.crecimiento-3 {
+  font-size: 7.5vw;
+  display: none;
+}
+
+
+

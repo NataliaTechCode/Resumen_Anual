@@ -1,0 +1,33 @@
+---
+import "./arbol_riegos.css";
+import ArbolesDestacados from "../arboles_destacados/arboles_destacados.astro";
+
+interface Props {
+  name: string;
+  image: string;
+}
+
+const { name, image } = Astro.props;
+
+---
+
+<div id="pagArboles-riegos">
+  <div class="container">
+    <h1 class="duration Arbolriegos">
+      {name ? " Parece que uno de tus árboles ha recibido especial atención" : 'Cuidar los árboles es esencial para su crecimiento y vital para el equilibrio ambiental'}
+    </h1>
+    
+    <img id="borde-izqabajo" src="../public/images/noche-icono-arbu.png" />
+    <img id="borde-derecho" src="../public/images/noche-icono-arbu.png" />
+
+    <div class="duration Arbolriegos-2">
+      <ArbolesDestacados
+        name={name ? name : ""}
+        image={image ? image : '../public/images/arbol_seco.jpg'}
+        tipo={name ? 'riegos': 'riegos'}
+      />
+    </div>
+  </div>
+  <script src="./arbol_riegos.js"></script>
+  <script src="../transition.js"></script>
+</div>

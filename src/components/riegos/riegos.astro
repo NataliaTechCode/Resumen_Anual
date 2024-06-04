@@ -1,0 +1,31 @@
+---
+import "./Riegos.css";
+import Flecha from "../flecha.astro";
+
+interface Props {
+  cantRiegos: number;
+}
+
+const { cantRiegos } = Astro.props;
+---
+
+<div id="pag-riegos">
+  <div class="container">
+    <img src="../public/images/Hojas.png" id="hojas-1" />
+    <img src="../public/images/Hojas.png" id="hojas-2" />
+    <h2 class="duration riegos" id="riegos">Lograste regar</h2>
+    <h2 class="duration riegos" id="frase">Cada gota cuenta</h2>
+
+    <div class="duration riegos">
+      <Flecha clase="duration riegos" id="2" />
+    </div>
+
+    <h3 id="water">{`${cantRiegos} Veces`}</h3>
+    <div id="container">
+      <div id="drop"></div>
+    </div>
+
+    <script src="./riegos.js"></script>
+    <script src="../transition.js"></script>
+  </div>
+</div>

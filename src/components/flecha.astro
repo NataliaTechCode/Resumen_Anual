@@ -1,0 +1,44 @@
+---
+interface Props {
+  id: String;
+  clase: String;
+}
+
+const { id, clase } = Astro.props;
+---
+
+<div class="container2">
+  <a>
+    <img
+      class={`${clase}`}
+      id={`flecha-${id}`}
+      src="../public/images/flecha2.png"
+    />
+  </a>
+</div>
+
+<script src="./riegos/riegos.js"></script>
+<style>
+  [id^="flecha"] {
+    position: absolute;
+    width: 6vw;
+    height: auto;
+    z-index: 999;
+    right: 0; 
+    transform: translateY(-50%);
+    display: none;
+  }
+
+
+  @media only screen and (max-width: 768px) {
+    [id^="flecha"] {
+      position: absolute;
+      width: 8vw;
+      height: auto;
+      right: 45%;
+      bottom: 5%;
+      display: none;
+      transform: rotate(90deg);
+    }
+  }
+</style>

@@ -1,0 +1,234 @@
+/*Trancisiones*/
+
+@keyframes circle-in-center {
+  from {
+    clip-path: circle(0%);
+  }
+  to {
+    clip-path: circle(125%);
+  }
+}
+
+[transition-style="in:circle:center"] {
+  animation: 1.5s cubic-bezier(0.25, 1, 0.3, 1) circle-in-center both;
+}
+
+@keyframes polygon-out-opposing-corners {
+  from {
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+  }
+  to {
+    clip-path: polygon(0 0, 50% 50%, 100% 100%, 50% 50%);
+  }
+}
+
+[transition-style="out:polygon:opposing-corners"] {
+  animation: 0.5s cubic-bezier(0.25, 1, 0.3, 1) polygon-out-opposing-corners
+    both;
+}
+
+@keyframes polygon-in-opposing-corners {
+  from {
+    clip-path: polygon(0 0, 50% 50%, 100% 100%, 50% 50%);
+  }
+  to {
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+  }
+}
+
+[transition-style="in:polygon:opposing-corners"] {
+  animation: 0.5s cubic-bezier(0.25, 1, 0.3, 1) polygon-in-opposing-corners both;
+}
+
+@keyframes wipe-out-top-right {
+  from {
+    clip-path: polygon(50% -50%, 150% 50%, 50% 150%, -50% 50%);
+  }
+  to {
+    clip-path: polygon(50% -50%, 150% 50%, 150% 50%, 50% -50%);
+  }
+}
+
+[transition-style="out:wipe:top-right"] {
+  animation: 1s cubic-bezier(0.25, 1, 0.3, 1) wipe-out-top-right both;
+}
+
+#pag-arboles,
+#pag-cantarboles {
+  visibility: hidden;
+  
+}
+
+#intro-arboles {
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 6vw;
+  width: 70%;
+  margin: 0;
+  line-height: 1.4;
+}
+
+
+#centrar {
+  position: absolute;
+  right: 0;
+  top: 45%;
+  z-index: 9999;
+}
+
+#arbusto {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  bottom: -5em;
+  object-fit: cover;
+}
+
+#arbusto-2 {
+  position: absolute;
+  width: 121.75em;
+  height: 25.875em;
+  bottom: -5em;
+  object-fit: cover;
+}
+
+#cantidad-arboles {
+  position: absolute;
+  left: 4%;
+  width: 25%;
+  font-size: 4vw;
+}
+
+#cantidadarboles-frase {
+  position: absolute;
+  right: 4%;
+  width: 25%;
+  font-size: 4vw;
+}
+
+#img-arbol {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  bottom: 0;
+  z-index: -1;
+}
+.circulo {
+  position: absolute;
+  width: 35%;
+  height: 100vw;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../public/images/Fondo.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-top-right-radius: 100%;
+  border-bottom-right-radius: 100%;
+  left: 0%;
+}
+
+.circulo-2 {
+  position: absolute;
+  width: 35%;
+  height: 100vw;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../public/images/Fondo.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-top-left-radius: 100%;
+  border-bottom-left-radius: 100%;
+  right: 0%;
+}
+
+
+@media (max-width: 768px) {
+  #borde-izquierdo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 35%;
+    height: 30%;
+  }
+
+  #borde-derecho {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 35%;
+    height: 30%;
+    transform: scaleX(-1);
+  }
+
+  #intro-arboles {
+    top: 45%;
+    font-size: 9vw;
+    width: 80%;
+  }
+
+  #cantidad-arboles {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, 50%);
+    width: 50%;
+    font-size: 1.5em;
+    margin: 0;
+  }
+
+  #cantidadarboles-frase {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, 50%);
+    width: 60%;
+    font-size: 1.5em;
+   
+  }
+
+  #img-arbol {
+    height: 50%;
+    bottom: 0;
+    z-index: 99;
+  }
+  .circulo {
+    position: absolute;
+    width: 100%;
+    height: 45%;
+    background-size: cover;
+    border-top-right-radius: 0%;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+    top: 0%;
+  }
+
+  .circulo-2 {
+    display: none;
+  }
+
+}
+@media (max-width: 400px) {
+  #cantidad-arboles {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, 50%);
+    width: 60%;
+    font-size: 1em;
+    margin: 0;
+  }
+
+  #cantidadarboles-frase {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, 50%);
+    width: 70%;
+    font-size: 1em;
+   
+  }
+}

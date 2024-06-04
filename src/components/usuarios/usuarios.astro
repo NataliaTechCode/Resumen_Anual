@@ -1,0 +1,39 @@
+---
+import "./usuario.css";
+import Flecha from "../flecha.astro";
+
+interface Props {
+  nombreUsuario: string;
+  imageProfile: String;
+}
+
+const { nombreUsuario, imageProfile } = Astro.props;
+
+// console.log(imageProfile)
+---
+
+<html>
+  <body>
+    <h1 class="duration usuario" id="frase-usuarios">
+      También hubo personas que te acompañaron con la adopción de árboles
+    </h1>
+
+    <img id="borde-derchmedio" src="../public/images/borde.png" />
+    <img id="borde-izqmedio" src="../public/images/borde.png" />
+
+    <section class="duration usuario-2">
+      <div class="card">
+        <div class="content">
+          <div class="imgBx">
+            <img src={`${imageProfile}`} />
+          </div>
+          <div class="contentBx">
+            <h3>{`${nombreUsuario}`}</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script src="./usuario.js"></script>
+  <script src="../transition.js"></script>
+</html>

@@ -1,0 +1,67 @@
+/*Trancisiones*/
+@keyframes wipe-in-right {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+[transition-style="in:wipe:right"] {
+  animation: 1s cubic-bezier(0.25, 1, 0.3, 1) wipe-in-right both;
+}
+
+@keyframes square-out-bottom-left {
+  from {
+    clip-path: inset(0 0 0 0);
+  }
+  to {
+    clip-path: inset(100% 100% 0 0);
+  }
+}
+
+[transition-style="out:square:bottom-left"] {
+  animation: 1s cubic-bezier(0.25, 1, 0.3, 1) square-out-bottom-left both;
+}
+
+#text {
+  font-size: 8vw;
+}
+
+#pg-scoremes {
+  visibility: hidden;
+}
+
+#text {
+  position: absolute;
+  top: 15%;
+}
+
+.score-mes {
+  position: absolute;
+  font-size: 4vw;
+  bottom: 20%;
+  margin: 0;
+  width: 70%;
+}
+
+.scoremes-2 {
+  font-size: 5vw;
+  width: 65%;
+  display: none;
+}
+
+#planta {
+  position: absolute;
+  width: 30%;
+  height: 55%;
+  top: 0;
+  right: 0;
+  object-fit: contain;
+}
+
+#flecha-10{
+  position: absolute;
+  top: 50%;
+}

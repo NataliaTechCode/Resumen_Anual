@@ -1,0 +1,21 @@
+---
+
+import { loadUsuarios } from "../services/loadUsuarios";
+
+
+// import { usuarios } from "../../public/data/usuario";
+// import { arboles } from "../../public/data/arbolesPlantados";
+
+const usuarios = await loadUsuarios();
+
+---
+
+<ul>
+  {
+    usuarios.map((usuario) => (
+      <a href={`/resumen/${usuario.id}`}>
+        <li>{usuario.id}</li>
+      </a>
+    ))
+  }
+</ul>

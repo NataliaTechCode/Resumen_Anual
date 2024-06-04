@@ -1,0 +1,62 @@
+@keyframes diamond-in-center {
+  from {
+    clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+  }
+  to {
+    clip-path: polygon(-50% 50%, 50% -50%, 150% 50%, 50% 150%);
+  }
+}
+
+[transition-style="in:diamond:center"] {
+  animation: 1s cubic-bezier(0.25, 1, 0.3, 1) diamond-in-center both;
+}
+
+@keyframes diamond-out-hesitate {
+  0% {
+    clip-path: polygon(-50% 50%, 50% -50%, 150% 50%, 50% 150%);
+  }
+  50% {
+    clip-path: polygon(45% 50%, 50% 25%, 55% 50%, 50% 75%);
+  }
+  100% {
+    clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+  }
+}
+
+[transition-style="out:diamond:hesitate"] {
+  animation: 1s cubic-bezier(0.25, 1, 0.3, 1) diamond-out-hesitate both;
+}
+
+#pag-medalla{
+  visibility: hidden;
+}
+#medalla {
+  margin: 0 auto;
+  max-width: 30%;
+  height: auto;
+  top: 5%;
+}
+
+.medalla {
+  /* top: 30%; */
+  font-size: 7.5vw;
+  width: 85%;
+  /* display: none; */
+}
+
+.medalla-text {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%; 
+  font-size: 5em;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 4%;
+}
+
+.medalla-2 {
+  margin: 0;
+  display: none;
+}

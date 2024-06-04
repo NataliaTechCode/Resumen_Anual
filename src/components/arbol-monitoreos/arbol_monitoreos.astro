@@ -1,0 +1,31 @@
+---
+import "./arbol_monitoreos.css";
+import ArbolesDestacados from "../arboles_destacados/arboles_destacados.astro";
+import Flecha from "../flecha.astro";
+
+interface Props {
+  name: string;
+  image: string;
+}
+
+const { name, image } = Astro.props;
+---
+
+<div id="pagArboles-monitoreos">
+  <div class="container">
+
+    <img id="borde-izqabajo" src="../public/images/noche-icono-arbu.png" />
+    <img id="borde-derecho" src="../public/images/noche-icono-arbu.png" />
+    
+    <div class="duration Arbolmonitoreo">
+      <ArbolesDestacados
+      name={name ? name : ''}
+      image={image ? image : "../public/images/arbol_seco.jpg"}
+      tipo={name ? 'Monitoreos': 'Monitoreos'}
+      />
+    </div>
+    <Flecha id="6" clase="duration Arbolmonitoreo" />
+  </div>
+  <script src="./arbol_monitoreos.js"></script>
+  <script src="../transition.js"></script>
+</div>

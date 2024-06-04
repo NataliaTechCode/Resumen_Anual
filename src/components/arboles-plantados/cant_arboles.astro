@@ -1,0 +1,33 @@
+---
+import "./arbol.css";
+import Flecha from "../flecha.astro";
+
+interface Props {
+  cantArboles: number;
+}
+
+const { cantArboles } = Astro.props;
+---
+
+<div id="pag-cantarboles">
+  <div class="container">
+    <div class="circulo">
+    </div>
+    <div class="circulo-2">
+    </div>
+    <Flecha id="5" clase="duration arbolrgs" />
+    
+    <img
+      id="img-arbol"
+      src="../public/images/ArbolFinal.png"
+      />
+    <h2 id="cantidad-arboles">
+      {`Contribuiste plantando un total de ${cantArboles} árboles`}
+    </h2>
+    <h2 id="cantidadarboles-frase">
+      Es un excelente aporte para nuestro medio ambiente
+    </h2>
+    <script src="./arbol.js"></script>
+    <script src="../transition.js"></script>
+  </div>
+</div>

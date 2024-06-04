@@ -1,0 +1,117 @@
+/*Imagenes bordes*/
+#borde-izquierdo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  z-index: -5;
+}
+
+#borde-derecho {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: auto;
+  height: auto;
+  transform: scaleX(-1);
+  z-index: -5;
+}
+
+#borde-izqabajo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  transform: scaley(-1);
+  z-index: 0;
+}
+
+#borde-derchabajo {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: auto;
+  height: auto;
+  transform: scale(-1, -1);
+  z-index: -5;
+}
+
+#borde-derchmedio {
+  position: absolute;
+  right: 0;
+  width: auto;
+  height: auto;
+  z-index: -5;
+}
+
+#borde-izqmedio {
+  position: absolute;
+  left: 0;
+  width: auto;
+  height: auto;
+  transform: scalex(-1);
+  z-index: -5;
+}
+
+#borde-derecarriba {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: auto;
+  height: auto;
+  /* transform: scaleX(-1); */
+  z-index: -5;
+}
+
+#borde-izqrotate {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: auto;
+  height: auto;
+  transform: rotate(-40deg);
+  transform: scaleX(-1);
+  z-index: 1;
+}
+
+#bordeizq-arribia {
+  position: absolute;
+  left: 10%;
+  top: -6em;
+  width: auto;
+  height: auto;
+  transform: rotate(-90deg);
+  z-index: -5;
+}
+
+#bordeabajo-almedio{
+  position: absolute;
+  bottom:-5em;
+  width: auto;
+  height: auto;
+  transform: rotate(90deg);
+  z-index: -5;
+}
+@media (max-width: 768px) {
+  #borde-derchmedio {
+    position: absolute;
+    right: 0;
+    width: 18%;
+    height: 18%;
+    object-fit: contain;
+    z-index: -5;
+  }
+
+  #borde-izqmedio {
+    position: absolute;
+    left: 0;
+    width: 18%;
+    height: 18%;
+    object-fit: contain;
+    transform: scalex(-1);
+    z-index: -5;
+  }
+}

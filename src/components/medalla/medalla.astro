@@ -1,0 +1,35 @@
+---
+import "./medalla.css";
+import Flecha from "../flecha.astro";
+
+interface Props {
+  puntos: number
+  medalla: String;
+}
+
+const { puntos,medalla } = Astro.props;
+---
+
+<div id="pag-medalla">
+  <div class="container">
+    <Flecha id="12" clase="duration medalla-2" />
+    <img id="borde-izquierdo" src="../public/images/noche-icono-arbu.png" />
+    <img id="borde-derchabajo" src="../public/images/noche-icono-arbu.png" />
+    <img
+      id="medalla"
+      class="duration medalla-2"
+      src=`../public/images/${medalla}.png`
+    />
+    <h1 class="duration medalla">
+      ¡Por último! veremos qué medalla has obtenido
+    </h1>
+    <div class="medalla-text">
+      <h4 class="duration medalla-2">{`${medalla}`}</h4>
+      <h5 class="duration medalla-2">Con un total de {`${puntos}`} puntos</h5>
+    </div>
+
+    <h3></h3>
+  </div>
+
+  <script src="./medalla.js"></script>
+</div>

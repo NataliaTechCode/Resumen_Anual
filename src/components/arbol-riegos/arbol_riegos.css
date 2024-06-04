@@ -1,0 +1,31 @@
+/*Trancisiones*/
+@keyframes wipe-in-bottom-left {
+  from {
+    clip-path: polygon(50% -50%, 150% 50%, 150% 50%, 50% -50%);
+  }
+  to {
+    clip-path: polygon(50% -50%, 150% 50%, 50% 150%, -50% 50%);
+  }
+}
+
+[transition-style="in:wipe:bottom-left"] {
+  animation: 1s cubic-bezier(0.25, 1, 0.3, 1) wipe-in-bottom-left both;
+}
+
+#pagArboles-riegos {
+  visibility: hidden;
+}
+
+.Arbolriegos {
+  font-size: 6vw;
+  z-index: 999;
+  width: 85%;
+  /* display: none; */
+}
+
+.Arbolriegos-2 {
+  font-size: 8vw;
+  display: none;
+}
+
+
