@@ -14,13 +14,13 @@ const { name, image } = Astro.props;
 <div id="pagArboles-monitoreos">
   <div class="container">
 
-    <img id="borde-izqabajo" src="../public/images/noche-icono-arbu.png" />
-    <img id="borde-derecho" src="../public/images/noche-icono-arbu.png" />
+    <img id="borde-izqabajo" src="/images/noche-icono-arbu.png" />
+    <img id="borde-derecho" src="/images/noche-icono-arbu.png" />
     
     <div class="duration Arbolmonitoreo">
       <ArbolesDestacados
       name={name ? name : ''}
-      image={image ? image : "../public/images/arbol_seco.jpg"}
+      image={image ? image : "/images/arbol_seco.jpg"}
       tipo={name ? 'Monitoreos': 'Monitoreos'}
       />
     </div>

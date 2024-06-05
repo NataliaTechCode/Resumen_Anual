@@ -17,13 +17,13 @@ const { name, image } = Astro.props;
       {name ? " Parece que uno de tus árboles ha recibido especial atención" : 'Cuidar los árboles es esencial para su crecimiento y vital para el equilibrio ambiental'}
     </h1>
     
-    <img id="borde-izqabajo" src="../public/images/noche-icono-arbu.png" />
-    <img id="borde-derecho" src="../public/images/noche-icono-arbu.png" />
+    <img id="borde-izqabajo" src="/images/noche-icono-arbu.png" />
+    <img id="borde-derecho" src="/images/noche-icono-arbu.png" />
 
     <div class="duration Arbolriegos-2">
       <ArbolesDestacados
         name={name ? name : ""}
-        image={image ? image : '../public/images/arbol_seco.jpg'}
+        image={image ? image : '/images/arbol_seco.jpg'}
         tipo={name ? 'riegos': 'riegos'}
       />
     </div>

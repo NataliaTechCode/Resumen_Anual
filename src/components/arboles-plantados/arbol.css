@@ -120,7 +120,7 @@
   width: 35%;
   height: 100vw;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../public/images/Fondo.jpg");
+    url("/images/Fondo.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   border-top-right-radius: 100%;
@@ -133,7 +133,7 @@
   width: 35%;
   height: 100vw;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../public/images/Fondo.jpg");
+    url("/images/Fondo.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   border-top-left-radius: 100%;

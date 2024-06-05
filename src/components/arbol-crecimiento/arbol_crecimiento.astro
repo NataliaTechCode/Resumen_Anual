@@ -18,13 +18,13 @@ const { name, image, crecimiento } = Astro.props;
       {name ? "Uno de tus árboles ha tenido un crecimiento extraordinario": 'No adoptaste árboles lo cual es esencial para su cuidado'}
     </h1>
 
-    <img id="borde-izqabajo" src="../public/images/noche-icono-arbu.png" />
-    <img id="borde-derecho" src="../public/images/noche-icono-arbu.png" />
+    <img id="borde-izqabajo" src="/images/noche-icono-arbu.png" />
+    <img id="borde-derecho" src="/images/noche-icono-arbu.png" />
 
     <div class="duration crecimiento-2">
       <ArbolesDestacados
         name={name ? name : ''}
-        image={image ? image : "../public/images/arbol_seco.jpg"}
+        image={image ? image : "/images/arbol_seco.jpg"}
         tipo={name ? `crecimiento de ${crecimiento} centimetros`: ''}
       />
     </div>
