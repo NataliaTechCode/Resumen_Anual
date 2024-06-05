@@ -25,15 +25,14 @@
   animation: 1s cubic-bezier(0.25, 1, 0.3, 1) square-out-bottom-left both;
 }
 
-#text {
-  font-size: 8vw;
-}
+
 
 #pg-scoremes {
   visibility: hidden;
 }
 
 #text {
+  font-size: 8vw;
   position: absolute;
   top: 15%;
 }
@@ -43,7 +42,9 @@
   width: 65%;
   /* display: none; */
 }
-
+#flecha-10{
+  display: block;
+}
 .scoremes-2 {
   font-size: 5vw;
   width: 65%;

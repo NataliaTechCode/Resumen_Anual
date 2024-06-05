@@ -15,13 +15,13 @@
   animation: 1s cubic-bezier(0.25, 1, 0.3, 1) diamond-in-hesitate both;
 }
 
-/* #pag-despedida {
+#pag-despedida {
   visibility: hidden;
-} */
+}
 
 .despedida {
   font-size: 7vw;
-  display: none;
+  /* display: none; */
 }
 
 .despedida-2 {
@@ -30,14 +30,14 @@
   display: none;
 }
 .despedida-3 {
-  /* display: none; */
+  display: none;
 }
 #social-share {
   position: absolute;
   right: 30%;
   top: 25%;
   margin: 0;  
-  /* display: none; */
+  display: none;
 }
 
 #medalla-1 {

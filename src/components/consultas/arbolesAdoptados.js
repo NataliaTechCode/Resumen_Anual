@@ -8,6 +8,24 @@ import { loadArboles } from "../../services/loadArboles";
 const usuarios = await loadUsuarios();
 const arboles = await loadArboles();
 
+export function ObtenerTamaño(id) {
+  let arbolesAdoptadosinf = [];
+  let arbol = [];
+  for (let index = 0; index < arboles.length; index++) {
+    if (arboles[index].usuariosQueAdoptaron.includes(id)) {
+      arbolesAdoptadosinf.push(arboles[index]);
+    }
+  }
+
+  // console.log(arbolesAdoptadosinf)
+  if(arbolesAdoptadosinf.length>0){
+    arbol.push("valor")
+  }else{
+   let arbol = [];
+  }
+  return arbol;
+}
+
 export function arbolesAdoptados(id) {
   let arbolesAdoptadosinf = [];
   for (let index = 0; index < arboles.length; index++) {

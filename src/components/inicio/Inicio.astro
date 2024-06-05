@@ -1,12 +1,14 @@
 ---
 import "./inicio.css";
 import Flecha from "../flecha.astro";
+import { arbolesAdoptados } from "../consultas/arbolesAdoptados";
 
 interface Props {
   nombre: String;
+  arboles: string[];
 }
 
-const { nombre } = Astro.props;
+const { nombre ,arboles} = Astro.props;
 
 /*Obtner solo el primero nombre */
 let nombre_usuario = nombre.split(" ");
@@ -29,7 +31,8 @@ let primerNombre = nombre_usuario[0];
             ES HORA DE CELEBRAR TUS LOGROS VAMOS A DESCUBRIRLO
           </h1>
 
-          <Flecha clase="duration introduccion" id="1" />
+          <Flecha clase={arboles.length ? "duration introduccion" : ""} id="1" />
+          <Flecha clase={arboles.length ? "" : "duration introduccion"}id="20" />
 
           <section>
             <img

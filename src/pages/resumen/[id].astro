@@ -2,6 +2,7 @@
 /*Importacion de pag*/
 import "../../components/resumen.css";
 import Layout from "../../layouts/Layout.astro";
+import Resumen from "../../components/resumen_sinDatos/resumen.astro"
 import Inicio from "../../components/inicio/Inicio.astro";
 import Riegos from "../../components/riegos/riegos.astro";
 import Monitoreos from "../../components/monitoreos/monitoreos.astro";
@@ -24,7 +25,7 @@ import LogoLayout from "../../layouts/LogoLayout.astro";
 /*Obtencion de datos */
 import {
   arbolesAdoptados,
-  arbolesPlantados,
+  arbolesPlantados,ObtenerTamaño
 } from "../../components/consultas/arbolesAdoptados";
 import {
   obtenerRiegos,
@@ -60,8 +61,14 @@ const usuario = usuarios.find((usuarios) => usuarios.id === id);
 
 /*Obtencion de datos */
 const arbolesAdoptado = arbolesAdoptados(id);
+const tamanoArbol = ObtenerTamaño(id);
 const arbolesPlantado = arbolesPlantados(arbolesAdoptado, id);
+// console.log(tamanoArbol)
+// console.log(arbolesAdoptado)
 
+// const as = [];
+// as.push("ASs")
+// console.log(as)
 const cantRiegos = obtenerRiegos(arbolesAdoptado, year, id);
 const cantMonitoreos = obtenerMonitoreos(arbolesAdoptado, year, id);
 const totalArboles = arbolesPlantadoscant(arbolesPlantado, year);
@@ -81,7 +88,7 @@ const datosarbolmonitoreo = obtenerdatosArbol(arbolmonitoreo);
 
 const arbolcrecimiento = maxcrecimiento(arbolesAdoptado, year);
 const datosarbolcrecimiento = obtenerdatosArbol(arbolcrecimiento);
-// console.log(datosarbolcrecimiento[0].fotografia)
+// console.log(arbolcrecimiento)
 
 /*Obtener usuario*/
 
@@ -109,7 +116,8 @@ const medalla = determinarMedalla(puntos);
 <Layout title="Resumen Anual.">
   <LogoLayout>
     <main>
-      <Inicio nombre={usuario ? usuario.nombre : "¿Cómo estás hoy?"} />
+      <Inicio nombre={usuario ? usuario.nombre : ""} arboles={tamanoArbol}/>
+      <Resumen></Resumen>
       <Riegos cantRiegos={cantRiegos} />
       <Monitoreos cantMonitoreos={cantMonitoreos} />
       <Arboles />
@@ -124,9 +132,9 @@ const medalla = determinarMedalla(puntos);
         image={datosarbolmonitoreo[0].fotografia}
       />
       <ArbolCrecimiento
-        name={datosarbolcrecimiento[0].nombrearbol}
-        image={datosarbolcrecimiento[0].fotografia}
-        crecimiento={20}
+        name={arbolcrecimiento[0].arbolMaximo}
+        image={arbolcrecimiento[0].arbolfotografia}
+        crecimiento={arbolcrecimiento[0].alturamaxima}
       />
 
       <div id="pag-usuario">
@@ -160,6 +168,8 @@ const medalla = determinarMedalla(puntos);
           ? usuario.imageProfile
           : "https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_1280.png"}
       />
+
+      
     </main>
   </LogoLayout>
 </Layout>

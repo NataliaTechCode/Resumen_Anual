@@ -40,6 +40,12 @@ const $$Layout = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate(_a || (_a = __template(['<html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Un m\xF3dulo para visualizar las estadisticas de Arbu"><link rel="apple-touch-icon" href="/logo192.png"><meta name="generator"', '><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"><title>', '</title><meta name="title" content="Arbu"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://arbu-share.netlify.app"><meta property="og:title" content="Arbu"><meta property="og:description" content="Un m\xF3dulo para visualizar las estadisticas de Arbu"><meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/arbu-c574d.appspot.com/o/logo%20arbu%20og.png?alt=media&token=05f46213-a773-428a-b3fc-50cf611ac0bb"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://arbu-share.netlify.app"><meta property="twitter:title" content="Arbu"><meta property="twitter:description" content="Un m\xF3dulo para visualizar las estadisticas de Arbu"><meta property="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/arbu-c574d.appspot.com/o/logo%20arbu%20og.png?alt=media&token=05f46213-a773-428a-b3fc-50cf611ac0bb"><script type="module"><\/script>', "</head> <body> ", " </body></html>"])), addAttribute(Astro2.generator, "content"), title, renderHead(), renderSlot($$result, $$slots["default"]));
 }, "D:/LabTecno/Arbu/Resumenanual/arbu-astro/arbu-astro/src/layouts/Layout.astro", void 0);
 
+const $$Resumen = createComponent(($$result, $$props, $$slots) => {
+  return renderTemplate`${maybeRenderHead()}<div id="pag-sinDatos"> <div class="container"> <!-- <img src="/images/Montañas.png" id="mountains" />
+    <img src="/images/Arboles.png" id="trees" />
+    <h2>sasd</h2> --> <h2 class="duration datos" id="plantar">Actualmente no hay datos para mostrar</h2> <h2 class="duration datos-2" id="plantar-2">No adoptaste ni plantaste ningún árbol</h2> <h2 class="duration datos-3" id="plantar-3">Adopta o planta un árbol cerca de casa, en los lugares que frecuentas</h2> <h2 class="duration datos-4" id="plantar-4">El próximo año esperamos ver muchos árboles plantados</h2> <!-- <h2 class="duration datos-5"  id="plantar-5">El próximo año esperamos ver muchos árboles plantados</h2> --> <img id="borde-derecarriba" src="/images/borde.png"> <img id="borde-izqrotate" src="/images/borde.png"> <div class="ternary-system"> <div class="sun primary"></div> <div class="sun secondary"></div> <div class="sun ternary"></div> </div> <div class="sand"> <div class="pendulums"> <div class="pendulum"> <div class="bar"></div> <div class="motion"> <div class="string"></div> <div class="weight"></div> </div> </div> <div class="pendulum shadow"> <div class="bar"></div> <div class="motion"> <div class="string"></div> <div class="weight"></div> </div> </div> </div> </div> <div class="pyramid"></div> </div>   </div>`;
+}, "D:/LabTecno/Arbu/Resumenanual/arbu-astro/arbu-astro/src/components/resumen_sinDatos/resumen.astro", void 0);
+
 const $$Astro$m = createAstro();
 const $$Flecha = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$m, $$props, $$slots);
@@ -52,12 +58,12 @@ const $$Astro$l = createAstro();
 const $$Inicio = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$l, $$props, $$slots);
   Astro2.self = $$Inicio;
-  const { nombre } = Astro2.props;
+  const { nombre, arboles } = Astro2.props;
   let nombre_usuario = nombre.split(" ");
   let primerNombre = nombre_usuario[0];
   return renderTemplate`<html> ${maybeRenderHead()}<div transition-style="out:wipe:cinematic"> <div id="pag-inicio"> <div class="container"> <img src="/images/Montañas.png" id="mountains"> <img src="/images/Arboles.png" id="trees"> <h1 class="duration intro">RESUMEN 2024</h1> <h1 class="duration saludo" id="saludo"> ${`Hola ${primerNombre}!!!!`} </h1> <h1 class="duration introduccion" id="introduccion">
 ES HORA DE CELEBRAR TUS LOGROS VAMOS A DESCUBRIRLO
-</h1> ${renderComponent($$result, "Flecha", $$Flecha, { "clase": "duration introduccion", "id": "1" })} <section> <img class="duration intro" src="/images/LogoLabTecno.png" id="labTecno"> <img class="duration intro" src="/images/Icono-arbu.png" id="icono"> <p class="duration intro">Arbu</p> <a href="#" class="duration intro" id="click">Click</a> </section>   </div> </div> </div>  </html>`;
+</h1> ${renderComponent($$result, "Flecha", $$Flecha, { "clase": arboles.length ? "duration introduccion" : "", "id": "1" })} ${renderComponent($$result, "Flecha", $$Flecha, { "clase": arboles.length ? "" : "duration introduccion", "id": "20" })} <section> <img class="duration intro" src="/images/LogoLabTecno.png" id="labTecno"> <img class="duration intro" src="/images/Icono-arbu.png" id="icono"> <p class="duration intro">Arbu</p> <a href="#" class="duration intro" id="click">Click</a> </section>   </div> </div> </div>  </html>`;
 }, "D:/LabTecno/Arbu/Resumenanual/arbu-astro/arbu-astro/src/components/inicio/Inicio.astro", void 0);
 
 const $$Astro$k = createAstro();
@@ -141,10 +147,7 @@ const $$Score = createComponent(($$result, $$props, $$slots) => {
 }, "D:/LabTecno/Arbu/Resumenanual/arbu-astro/arbu-astro/src/components/score/score.astro", void 0);
 
 const $$Scoremes = createComponent(($$result, $$props, $$slots) => {
-  return renderTemplate`${maybeRenderHead()}<div id="pg-scoremes"> <div class="container"> ${renderComponent($$result, "Flecha", $$Flecha, { "id": "10", "clase": "duration scoremes-2" })} <img id="bordeizq-arribia" src="/images/borde.png"> <img id="borde-izqabajo" src="/images/noche-icono-arbu.png"> <img id="planta" src="/images/planta.png"> <!-- <h2 class="duration score-mes" id="text">!FEBRERO!</h2>
-    <h3 class="duration score-mes">
-      Se destacó como el mes con la mayor cantidad de puntos acumulados
-    </h3> --> <h2 class="duration score-mes">
+  return renderTemplate`${maybeRenderHead()}<div id="pg-scoremes"> <div class="container"> ${renderComponent($$result, "Flecha", $$Flecha, { "id": "10", "clase": "duration score-mes-2" })} <img id="bordeizq-arribia" src="/images/borde.png"> <img id="borde-izqabajo" src="/images/noche-icono-arbu.png"> <img id="planta" src="/images/planta.png"> <h2 class="duration score-mes">
 ¡Es momento de descubrir en qué posición te encuentras en el top!
 </h2> </div>   </div>`;
 }, "D:/LabTecno/Arbu/Resumenanual/arbu-astro/arbu-astro/src/components/score_mes/scoremes.astro", void 0);
@@ -291,7 +294,7 @@ const $$Despedida = createComponent(($$result, $$props, $$slots) => {
 </h1> <h1 class="duration despedida-2">
 No te preocupes si tu aporte fue mínimo, cada contribución cuenta y suma
       un cambio más al medio ambiente
-</h1> <img class="duration despedida-3"${addAttribute(`${imageProfile}`, "src")} id="imageProfile" alt=""> <h2 class="duration despedida-3" id="frase-despedida"> ${`\xA1Nos vemos el pr\xF3ximo a\xF1o ${nombre}!`} </h2> <div class="duration despedida-3" id="social-share"> ${renderComponent($$result, "SocialShare", $$SocialShare, { "url": "https://arbu.app", "buttons": BUTTONS, "description": "Description of the page/post", "via": "YourTwitterAccount", "title": "Page Title" })} <a id="whatsapp" href="https://api.whatsapp.com/send?text=Visita Nuestro nuevo modulo resumen anual:https://arbu.app" target="_blank"> <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>WhatsApp</title><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg> </a> </div> </div>  </div>`;
+</h1> <img class="duration despedida-3"${addAttribute(`${imageProfile}`, "src")} id="imageProfile" alt=""> <h2 class="duration despedida-3" id="frase-despedida"> ${`\xA1Nos vemos el pr\xF3ximo a\xF1o ${nombre}!`} </h2> <div class="duration despedida-3" id="social-share"> ${renderComponent($$result, "SocialShare", $$SocialShare, { "url": "https://arbu.app", "buttons": BUTTONS, "description": "Description of the page/post", "via": "YourTwitterAccount", "title": "Page Title" })} <a id="whatsapp" href="https://api.whatsapp.com/send?text=Visita Visita nuestro nuevo modulo resumen anual:https://arbu.app" target="_blank"> <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>WhatsApp</title><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg> </a> </div> </div>  </div>`;
 }, "D:/LabTecno/Arbu/Resumenanual/arbu-astro/arbu-astro/src/components/despedida/despedida.astro", void 0);
 
 const $$Logo = createComponent(($$result, $$props, $$slots) => {
@@ -320,6 +323,22 @@ const loadArboles = async () => {
 
 await loadUsuarios();
 const arboles = await loadArboles();
+
+function ObtenerTamaño(id) {
+  let arbolesAdoptadosinf = [];
+  let arbol = [];
+  for (let index = 0; index < arboles.length; index++) {
+    if (arboles[index].usuariosQueAdoptaron.includes(id)) {
+      arbolesAdoptadosinf.push(arboles[index]);
+    }
+  }
+
+  // console.log(arbolesAdoptadosinf)
+  if(arbolesAdoptadosinf.length>0){
+    arbol.push("valor");
+  }
+  return arbol;
+}
 
 function arbolesAdoptados(id) {
   let arbolesAdoptadosinf = [];
@@ -1145,6 +1164,7 @@ const $$id = createComponent(async ($$result, $$props, $$slots) => {
   const { id } = Astro2.params;
   const usuario = usuarios.find((usuarios2) => usuarios2.id === id);
   const arbolesAdoptado = arbolesAdoptados(id);
+  const tamanoArbol = ObtenerTama\u00F1o(id);
   const arbolesPlantado = arbolesPlantados(arbolesAdoptado, id);
   const cantRiegos = obtenerRiegos(arbolesAdoptado, year, id);
   const cantMonitoreos = obtenerMonitoreos(arbolesAdoptado, year, id);
@@ -1154,7 +1174,7 @@ const $$id = createComponent(async ($$result, $$props, $$slots) => {
   const arbolmonitoreo = maxMonitoreos(arbolesAdoptado, year);
   const datosarbolmonitoreo = obtenerdatosArbol(arbolmonitoreo);
   const arbolcrecimiento = maxcrecimiento(arbolesAdoptado, year);
-  const datosarbolcrecimiento = obtenerdatosArbol(arbolcrecimiento);
+  obtenerdatosArbol(arbolcrecimiento);
   const usuariosQueadoptaron = obtenerUsuarios(arbolesAdoptado);
   const detallesDeUsuarios = obtenerDetallesDeUsuarios(
     usuariosQueadoptaron,
@@ -1164,7 +1184,7 @@ const $$id = createComponent(async ($$result, $$props, $$slots) => {
   const topactual = calculartop(id);
   const puntos = obtenerPuntosTotal(id);
   const medalla = determinarMedalla(puntos);
-  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Resumen Anual." }, { "default": ($$result2) => renderTemplate` ${renderComponent($$result2, "LogoLayout", $$LogoLayout, {}, { "default": ($$result3) => renderTemplate` ${maybeRenderHead()}<main> ${renderComponent($$result3, "Inicio", $$Inicio, { "nombre": usuario ? usuario.nombre : "\xBFC\xF3mo est\xE1s hoy?" })} ${renderComponent($$result3, "Riegos", $$Riegos, { "cantRiegos": cantRiegos })} ${renderComponent($$result3, "Monitoreos", $$Monitoreos, { "cantMonitoreos": cantMonitoreos })} ${renderComponent($$result3, "Arboles", $$Arbol, {})} ${renderComponent($$result3, "CantArboles", $$CantArboles, { "cantArboles": totalArboles })} ${renderComponent($$result3, "ArbolRiegos", $$ArbolRiegos, { "name": datosarbolriego[0].nombrearbol, "image": datosarbolriego[0].fotografia })} ${renderComponent($$result3, "ArbolMonitoreos", $$ArbolMonitoreos, { "name": datosarbolmonitoreo[0].nombrearbol, "image": datosarbolmonitoreo[0].fotografia })} ${renderComponent($$result3, "ArbolCrecimiento", $$ArbolCrecimiento, { "name": datosarbolcrecimiento[0].nombrearbol, "image": datosarbolcrecimiento[0].fotografia, "crecimiento": 20 })} <div id="pag-usuario"> <div class="container"> ${renderComponent($$result3, "Flecha", $$Flecha, { "id": "8", "clase": "duration usuario-2" })} ${detallesDeUsuarios.map((user) => renderTemplate`${renderComponent($$result3, "Usuarios", $$Usuarios, { "nombreUsuario": user.nombre || "Nombre no disponible", "imageProfile": user.imageProfile === "default" ? "/images/perfil.jpg" : user.imageProfile })}`)}   </div> </div> ${renderComponent($$result3, "Score", $$Score, {})} ${renderComponent($$result3, "Scoremes", $$Scoremes, {})} ${renderComponent($$result3, "Top", $$Top, { "top": topactual })} ${renderComponent($$result3, "Medalla", $$Medalla, { "puntos": puntos, "medalla": medalla })} ${renderComponent($$result3, "Despedida", $$Despedida, { "nombre": usuario ? usuario.nombre : "", "imageProfile": usuario ? usuario.imageProfile : "https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_1280.png" })} </main> ` })} ` })}`;
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Resumen Anual." }, { "default": ($$result2) => renderTemplate` ${renderComponent($$result2, "LogoLayout", $$LogoLayout, {}, { "default": ($$result3) => renderTemplate` ${maybeRenderHead()}<main> ${renderComponent($$result3, "Inicio", $$Inicio, { "nombre": usuario ? usuario.nombre : "", "arboles": tamanoArbol })} ${renderComponent($$result3, "Resumen", $$Resumen, {})} ${renderComponent($$result3, "Riegos", $$Riegos, { "cantRiegos": cantRiegos })} ${renderComponent($$result3, "Monitoreos", $$Monitoreos, { "cantMonitoreos": cantMonitoreos })} ${renderComponent($$result3, "Arboles", $$Arbol, {})} ${renderComponent($$result3, "CantArboles", $$CantArboles, { "cantArboles": totalArboles })} ${renderComponent($$result3, "ArbolRiegos", $$ArbolRiegos, { "name": datosarbolriego[0].nombrearbol, "image": datosarbolriego[0].fotografia })} ${renderComponent($$result3, "ArbolMonitoreos", $$ArbolMonitoreos, { "name": datosarbolmonitoreo[0].nombrearbol, "image": datosarbolmonitoreo[0].fotografia })} ${renderComponent($$result3, "ArbolCrecimiento", $$ArbolCrecimiento, { "name": arbolcrecimiento[0].arbolMaximo, "image": arbolcrecimiento[0].arbolfotografia, "crecimiento": arbolcrecimiento[0].alturamaxima })} <div id="pag-usuario"> <div class="container"> ${renderComponent($$result3, "Flecha", $$Flecha, { "id": "8", "clase": "duration usuario-2" })} ${detallesDeUsuarios.map((user) => renderTemplate`${renderComponent($$result3, "Usuarios", $$Usuarios, { "nombreUsuario": user.nombre || "Nombre no disponible", "imageProfile": user.imageProfile === "default" ? "/images/perfil.jpg" : user.imageProfile })}`)}   </div> </div> ${renderComponent($$result3, "Score", $$Score, {})} ${renderComponent($$result3, "Scoremes", $$Scoremes, {})} ${renderComponent($$result3, "Top", $$Top, { "top": topactual })} ${renderComponent($$result3, "Medalla", $$Medalla, { "puntos": puntos, "medalla": medalla })} ${renderComponent($$result3, "Despedida", $$Despedida, { "nombre": usuario ? usuario.nombre : "", "imageProfile": usuario ? usuario.imageProfile : "https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_1280.png" })} </main> ` })} ` })}`;
 }, "D:/LabTecno/Arbu/Resumenanual/arbu-astro/arbu-astro/src/pages/resumen/[id].astro", void 0);
 
 const $$file = "D:/LabTecno/Arbu/Resumenanual/arbu-astro/arbu-astro/src/pages/resumen/[id].astro";

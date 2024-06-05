@@ -3,7 +3,7 @@ function mostrarElemento(id) {
   elemento.style.visibility = "visible";
 }
 
-function transición(Nextpag, Actualpag, Outanimacion, Inanimacion) {
+export function transición(Nextpag, Actualpag, Outanimacion, Inanimacion) {
   var target = document.getElementById(Nextpag);
   var pag = document.getElementById(Actualpag);
 
@@ -37,6 +37,16 @@ document.getElementById("flecha-1").addEventListener("click", function (event) {
     mostrarElemento("water");
   }, 3000);
 });
+
+// document.getElementById("flecha-20").addEventListener("click", function (event) {
+//   event.preventDefault();
+//   transición(
+//     "pag-sinDatos",
+//     "pag-inicio",
+//     "out:square:center",
+//     "in:square:center"
+//   );
+// });
 
 /*Riegos */
 document.getElementById("flecha-2").addEventListener("click", function (event) {
@@ -128,8 +138,8 @@ document.getElementById("flecha-9").addEventListener("click", function (event) {
 
 /*Score-mes*/
 document
-  .getElementById("flecha-10")
-  .addEventListener("click", function (event) {
+.getElementById("flecha-10")
+.addEventListener("click", function (event) {
     event.preventDefault();
     transición(
       "pag-top",
@@ -138,9 +148,9 @@ document
       "in:square:top-right"
     );
   });
-
-/*Top*/
-document
+  
+  /*Top*/
+  document
   .getElementById("flecha-11")
   .addEventListener("click", function (event) {
     event.preventDefault();
@@ -163,3 +173,4 @@ document
       "in:diamond:hesitate"
     );
   });
+  
