@@ -33,9 +33,9 @@ const $$Inicio = createComponent(($$result, $$props, $$slots) => {
   const { nombre } = Astro2.props;
   let nombre_usuario = nombre.split(" ");
   let primerNombre = nombre_usuario[0];
-  return renderTemplate`<html> ${maybeRenderHead()}<div transition-style="out:wipe:cinematic"> <div id="pag-inicio"> <div class="container"> <img src="images/Montañas.png" id="mountains"> <img src="images/Arboles.png" id="trees"> <h1 class="duration intro">RESUMEN 2024</h1> <h1 class="duration saludo" id="saludo"> ${`Hola ${primerNombre}!!!!`} </h1> <h1 class="duration introduccion" id="introduccion">
+  return renderTemplate`<html> ${maybeRenderHead()}<div transition-style="out:wipe:cinematic"> <div id="pag-inicio"> <div class="container"> <img src="/images/Montañas.png" id="mountains"> <img src="/images/Arboles.png" id="trees"> <h1 class="duration intro">RESUMEN 2024</h1> <h1 class="duration saludo" id="saludo"> ${`Hola ${primerNombre}!!!!`} </h1> <h1 class="duration introduccion" id="introduccion">
 ES HORA DE CELEBRAR TUS LOGROS VAMOS A DESCUBRIRLO
-</h1> ${renderComponent($$result, "Flecha", $$Flecha, { "clase": "duration introduccion", "id": "1" })} <section> <img class="duration intro" src="images/LogoLabTecno.png" id="labTecno"> <img class="duration intro" src="images/Icono-arbu.png" id="icono"> <p class="duration intro">Arbu</p> <a href="#" class="duration intro" id="click">Click</a> </section>   </div> </div> </div>  </html>`;
+</h1> ${renderComponent($$result, "Flecha", $$Flecha, { "clase": "duration introduccion", "id": "1" })} <section> <img class="duration intro" src="/images/LogoLabTecno.png" id="labTecno"> <img class="duration intro" src="/images/Icono-arbu.png" id="icono"> <p class="duration intro">Arbu</p> <a href="#" class="duration intro" id="click">Click</a> </section>   </div> </div> </div>  </html>`;
 }, "D:/LabTecno/Arbu/Resumenanual/arbu-astro/arbu-astro/src/components/inicio/Inicio.astro", void 0);
 
 const $$Astro$c = createAstro();
