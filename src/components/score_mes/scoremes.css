@@ -39,11 +39,9 @@
 }
 
 .score-mes {
-  position: absolute;
-  font-size: 4vw;
-  bottom: 20%;
-  margin: 0;
-  width: 70%;
+  font-size: 5vw;
+  width: 65%;
+  /* display: none; */
 }
 
 .scoremes-2 {

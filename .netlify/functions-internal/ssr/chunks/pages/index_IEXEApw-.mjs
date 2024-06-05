@@ -1,12 +1,5 @@
----
-interface Props {
-  title: string;
-}
-
-const { title } = Astro.props;
----
-
-<!doctype html>
+function render({ slots: ___SLOTS___ }) {
+		return `<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -17,21 +10,7 @@ const { title } = Astro.props;
       content="Un módulo para visualizar las estadisticas de Arbu"
     />
     <link rel="apple-touch-icon" href="/logo192.png" />
-
-    <meta name="generator" content={Astro.generator} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-
-    <title>{title}</title>
-
+    <title>Arbu</title>
     <meta name="title" content="Arbu" />
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -58,27 +37,53 @@ const { title } = Astro.props;
       property="twitter:image"
       content="https://firebasestorage.googleapis.com/v0/b/arbu-c574d.appspot.com/o/logo%20arbu%20og.png?alt=media&token=05f46213-a773-428a-b3fc-50cf611ac0bb"
     />
+    <style>
+      .container {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 0;
+      }
 
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.5/lottie.min.js"
-    ></script>
-    <script type="module"></script>
+      img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      body {
+        background-color: #056d60;
+        margin: 0;
+      }
+
+      h1 {
+        color: aliceblue;
+        font-family: Arial, Helvetica, sans-serif;
+        position: absolute;
+        z-index: 1;
+        font-size: 10vw;
+        font-weight: normal;
+        width: 90%;
+      }
+    </style>
   </head>
   <body>
-    <slot />
+    <div class="container">
+      <img src="/images/Montañas.png" id="mountains" />
+      <img src="/images/Arboles.png" id="trees" />
+
+      <h1 class="duration intro">RESUMEN 2024</h1>
+    </div>
   </body>
 </html>
-<style is:global>
-  html,
-  body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    /* overflow:hidden; */
-    font-family: "Poppins", sans-serif;
-    font-weight: normal;
-    background: #056d60;
-    color: white;
-  }
-</style>
+`
+	}
+render["astro:html"] = true;
+
+export { render as default };

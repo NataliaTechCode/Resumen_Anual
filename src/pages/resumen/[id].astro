@@ -80,7 +80,7 @@ const datosarbolmonitoreo = obtenerdatosArbol(arbolmonitoreo);
 /*Arbol con mayor crecimiento */
 
 const arbolcrecimiento = maxcrecimiento(arbolesAdoptado, year);
-const datosarbolcrecimiento = obtenerdatosArbol(arbolmonitoreo);
+const datosarbolcrecimiento = obtenerdatosArbol(arbolcrecimiento);
 // console.log(datosarbolcrecimiento[0].fotografia)
 
 /*Obtener usuario*/
@@ -91,6 +91,7 @@ const detallesDeUsuarios = obtenerDetallesDeUsuarios(
   usuarios,
   id
 );
+
 
 /*Obtener Top Usuario */
 const topactual = calculartop(id);
