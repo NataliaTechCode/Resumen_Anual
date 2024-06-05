@@ -16,11 +16,12 @@
 }
 
 #pag-despedida {
-  visibility: hidden;
+  /* visibility: hidden; */
 }
 
 .despedida {
   font-size: 7vw;
+  display: none;
 }
 
 .despedida-2 {
@@ -29,14 +30,14 @@
   display: none;
 }
 .despedida-3 {
-  display: none;
+  /* display: none; */
 }
 #social-share {
   position: absolute;
   right: 30%;
   top: 25%;
   margin: 0;  
-  display: none;
+  /* display: none; */
 }
 
 #medalla-1 {
