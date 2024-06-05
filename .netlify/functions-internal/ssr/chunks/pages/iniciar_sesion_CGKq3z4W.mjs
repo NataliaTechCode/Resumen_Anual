@@ -2,7 +2,7 @@ import { c as createComponent, r as renderTemplate, m as maybeRenderHead, f as a
 import 'kleur/colors';
 import 'html-escaper';
 import 'clsx';
-import { l as loadUsuarios } from './_id__DTpIUwIp.mjs';
+import { l as loadUsuarios } from './_id__BlHErzeB.mjs';
 
 const $$IniciarSesion = createComponent(async ($$result, $$props, $$slots) => {
   const usuarios = await loadUsuarios();
