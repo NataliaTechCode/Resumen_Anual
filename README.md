@@ -11,7 +11,7 @@ npm create astro@latest -- --template basics
 > 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
 ![Inicio del Resumen Anual](https://github.com/user-attachments/assets/812a7fc6-c249-4799-b29f-9728473950ba)
-[Ver el una parte del resultado de la aplicación](https://arbu-share.netlify.app/resumen/123456#)
+[Ver una parte del resultado de la aplicación](https://arbu-share.netlify.app/resumen/123456#)
 
 ## 🚀 Project Structure
 
